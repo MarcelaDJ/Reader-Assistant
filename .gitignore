@@ -1,3 +1,5 @@
+### Android Studio ###
+#IDE config
 *.iml
 .gradle
 /local.properties
@@ -13,3 +15,110 @@
 .externalNativeBuild
 .cxx
 local.properties
+*.iws
+*.ipr
+*.swp
+
+
+# Directorios de build
+/build/
+/app/build/
+/*/build/
+
+# Archivos generados por Gradle
+/.gradle/
+/gradle/
+/gradlew
+/gradlew.bat
+
+# Capturas de pantalla de pruebas
+/screenshots/
+
+### HMS Specific ###
+# Archivos de configuración de HMS (pueden contener datos sensibles)
+agconnect-services.json
+agconnect-services.plist
+
+# Directorio de plugins de HMS
+**/agc/
+
+# Archivos temporales de HMS
+*.hmap
+
+### Keystores y certificados ###
+# ¡NUNCA subir keystores al repositorio!
+*.jks
+*.keystore
+*.pfx
+*.p12
+*.cer
+*.crt
+
+# Archivos de propiedades con contraseñas
+keystore.properties
+*.properties
+
+### Gradle ###
+.gradle/
+!gradle-wrapper.jar
+
+# Gradle Build Cache
+**/build/outputs/cache/
+
+### Logs ###
+*.log
+log/
+
+### Temp files ###
+*.tmp
+*.temp
+
+### Archivos de cobertura ###
+*.gcno
+*.gcda
+
+### Archivos de profiling ###
+*.hprof
+
+# Windows
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Linux
+*~
+
+### Firebase ###
+google-services.json
+GoogleService-Info.plist
+
+### Fastlane ###
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+### Archivos de configuración específicos del proyecto ###
+local-override.properties
+
+### Android Studio auto gen ###
+captures/
+.navigation/
+*.knit.html
+
+### Archivos de lint ###
+/lint/
+*.lint
+
+### Archivos de rendimiento ###
+*.profmap
+
+### Archivos de testing ###
+**/*/android/**/*.json
+**/*/android/**/*.png
+
+### Excluir directorios vacíos ###
+**/empty_dir/
+
+### Mantener el wrapper de Gradle ###
+!gradle/wrapper/gradle-wrapper.jar
