@@ -13,9 +13,12 @@ lifecycleViewmodelKtx = "2.9.3"
 navigationFragmentKtx = "2.9.3"
 navigationUiKtx = "2.9.3"
 hilt = "2.57.1"
-kspVers = "2.0.0-1.0.24"
+kspVers = "2.2.10-2.0.2"
 room = "2.7.2"
-hms  = "6.14.0.300"
+hms-base = "6.13.0.303"
+hms-hwid = "6.14.0.300"
+tts = "3.11.0.301"
+playServicesBase = "18.7.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,8 +40,11 @@ room-runtime       = { module = "androidx.room:room-runtime", version.ref = "roo
 room-ktx           = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler      = { module = "androidx.room:room-compiler", version.ref = "room" }
 
-hms-base           = { module = "com.huawei.hms:base", version.ref = "hms" }
-hms-hwid           = { module = "com.huawei.hms:hwid", version.ref = "hms" }
+hms-base           = { module = "com.huawei.hms:base", version.ref = "hms-base" }
+hms-hwid           = { module = "com.huawei.hms:hwid", version.ref = "hms-hwid" }
+hms-ml-computer-voice-tts = { module = "com.huawei.hms:ml-computer-voice-tts", version.ref = "tts"}
+
+play-services-base = { group = "com.google.android.gms", name = "play-services-base", version.ref = "playServicesBase" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

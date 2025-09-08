@@ -8,19 +8,20 @@ pluginManagement {
             }
         }
         mavenCentral()
-        maven { url = uri("https://developer.huawei.com/repo/") }
         gradlePluginPortal()
+        maven {  url 'https://developer.huawei.com/repo/' }
     }
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
-        maven { url = uri("https://developer.huawei.com/repo/") }
         mavenCentral()
+        maven {  url 'https://developer.huawei.com/repo/'}
     }
 }
 
 rootProject.name = "Reader Assistant"
 include ':app'
 include ':core'
+include ':tts'
