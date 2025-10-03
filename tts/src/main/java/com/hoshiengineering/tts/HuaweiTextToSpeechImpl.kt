@@ -13,7 +13,7 @@ class HuaweiTextToSpeechImpl(context: Context) : AppTextToSpeech {
             .setLanguage(MLTtsConstants.TTS_EN_US)
             .setPerson(MLTtsConstants.TTS_SPEAKER_FEMALE_EN)
             .setSpeed(1.0f)
-            .setVolume(1.0f)
+            .setVolume(10.0f)
         engine = MLTtsEngine(config)
     }
 

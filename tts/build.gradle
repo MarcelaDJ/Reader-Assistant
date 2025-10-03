@@ -44,7 +44,6 @@ dependencies {
     implementation libs.hilt.android
     ksp libs.hilt.compiler
 
-    implementation libs.hms.ml.computer.voice.tts
     ksp("com.squareup:javapoet:1.13.0")
     //ksp libs.room.compiler
 }
