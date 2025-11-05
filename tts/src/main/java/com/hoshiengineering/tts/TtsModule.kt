@@ -2,6 +2,7 @@ package com.hoshiengineering.tts
 
 import android.content.Context
 import com.hoshiengineering.core.utils.ServiceAvailabilityProvider
+import com.huawei.hms.mlsdk.common.MLApplication
 
 import dagger.Module
 import dagger.Provides
@@ -20,9 +21,9 @@ object TtsModule {
         val isHmsAvailable = ServiceAvailabilityProvider.isHmsAvailable(context)
 
         return if (isHmsAvailable) {
-            HuaweiTextToSpeechImpl(context)
+            HuaweiTextToSpeechImpl(context.applicationContext)
         } else {
-            GoogleTextToSpeechImpl(context)
+            GoogleTextToSpeechImpl(context.applicationContext)
         }
     }
 }

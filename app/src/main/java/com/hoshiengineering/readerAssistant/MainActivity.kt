@@ -1,5 +1,7 @@
 package com.hoshiengineering.readerAssistant
 
+import android.content.Context
+import android.media.AudioManager
 import android.os.Bundle
 import android.view.Menu
 import androidx.activity.viewModels
@@ -49,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        val audioManager = this.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0)
 
         viewModel.speak("Hola desde Hilt con HMS o GMS automático 🚀")
     }
