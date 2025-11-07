@@ -19,6 +19,7 @@ class MyReaderAssistant: Application() {
         val isHmsAvailable = ServiceAvailabilityProvider.isHmsAvailable(this)
 
          if (isHmsAvailable) {
+             MLApplication.initialize(applicationContext)
              val ttsInit = MLApplication.getInstance().setApiKey("DgEDALcjrS3ZR+VjwPA4Ut4BuP/npSkcw4fJsF/rLvgW6s0bAFQ/L2xjn+yYSOIh2MMoW38FOOD1oLNBV45in7lPXvz05FY0bFmYnQ==")
              Log.d("HuaweiTTS", "HMS TTS inicializado con appId: $ttsInit")
 

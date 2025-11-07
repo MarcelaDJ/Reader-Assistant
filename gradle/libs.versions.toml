@@ -12,6 +12,7 @@ material = "1.13.0"
 constraintlayout = "2.2.1"
 lifecycleLivedataKtx = "2.9.3"
 lifecycleViewmodelKtx = "2.9.3"
+mlComputerVoiceTtsModelBee = "3.6.0.300"
 navigationFragmentKtx = "2.9.3"
 navigationUiKtx = "2.9.3"
 hilt = "2.50"
@@ -20,7 +21,7 @@ room = "2.6.1"
 hms-base = "6.13.0.303"
 hms-hwid = "6.14.0.300"
 hms-push = "6.13.0.300"
-tts = "3.11.0.301"
+tts = "3.12.0.301"
 playServicesBase = "18.7.2"
 javapoet = "1.13.0"
 
@@ -42,6 +43,8 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 hilt-android       = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler      = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 
+ml-computer-voice-tts-model-bee = { module = "com.huawei.hms:ml-computer-voice-tts-model-bee", version.ref = "mlComputerVoiceTtsModelBee" }
+ml-computer-voice-tts-model-eagle = { module = "com.huawei.hms:ml-computer-voice-tts-model-eagle", version.ref = "mlComputerVoiceTtsModelBee" }
 room-runtime       = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx           = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler      = { module = "androidx.room:room-compiler", version.ref = "room" }
