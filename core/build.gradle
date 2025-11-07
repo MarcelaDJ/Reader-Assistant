@@ -54,4 +54,5 @@ dependencies {
     api libs.agconnect.core
     api libs.hms.push
     api libs.hms.ml.computer.voice.tts
+    api libs.play.services.mlkit.text.recognition
 }
