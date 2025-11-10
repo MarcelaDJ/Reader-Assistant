@@ -49,4 +49,9 @@ dependencies {
 
     implementation libs.ml.computer.voice.tts.model.bee
     implementation libs.ml.computer.voice.tts.model.eagle
+    implementation libs.ml.computer.vision.ocr
+    implementation libs.ml.computer.vision.ocr.latin.model
+    implementation libs.ml.computer.vision.ocr.jk.model
+    implementation libs.ml.computer.vision.ocr.cn.model
+    implementation libs.ml.computer.vision.cloud
 }

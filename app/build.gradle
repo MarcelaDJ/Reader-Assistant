@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.agcpv)
 }
 apply plugin: 'com.android.application'
 apply plugin: 'com.huawei.agconnect'
@@ -31,7 +32,7 @@ android {
             v2SigningEnabled true
         }
         debug {
-           
+
         }
     }
 

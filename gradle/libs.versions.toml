@@ -1,6 +1,6 @@
 [versions]
 agconnectCore = "1.9.1.304"
-agcp = "1.9.3.302"
+agcp = "1.9.4.300"
 agp = "8.11.1"
 kotlin = "2.0.0"
 coreKtx = "1.17.0"
@@ -12,6 +12,8 @@ material = "1.13.0"
 constraintlayout = "2.2.1"
 lifecycleLivedataKtx = "2.9.3"
 lifecycleViewmodelKtx = "2.9.3"
+mlComputerVisionCloud = "2.0.5.304"
+mlComputerVisionOcr = "2.0.5.301"
 mlComputerVoiceTtsModelBee = "3.6.0.300"
 navigationFragmentKtx = "2.9.3"
 navigationUiKtx = "2.9.3"
@@ -44,6 +46,11 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 hilt-android       = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler      = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 
+ml-computer-vision-cloud = { module = "com.huawei.hms:ml-computer-vision-cloud", version.ref = "mlComputerVisionCloud" }
+ml-computer-vision-ocr = { module = "com.huawei.hms:ml-computer-vision-ocr", version.ref = "mlComputerVisionOcr" }
+ml-computer-vision-ocr-cn-model = { module = "com.huawei.hms:ml-computer-vision-ocr-cn-model", version.ref = "mlComputerVisionOcr" }
+ml-computer-vision-ocr-jk-model = { module = "com.huawei.hms:ml-computer-vision-ocr-jk-model", version.ref = "mlComputerVisionOcr" }
+ml-computer-vision-ocr-latin-model = { module = "com.huawei.hms:ml-computer-vision-ocr-latin-model", version.ref = "mlComputerVisionOcr" }
 ml-computer-voice-tts-model-bee = { module = "com.huawei.hms:ml-computer-voice-tts-model-bee", version.ref = "mlComputerVoiceTtsModelBee" }
 ml-computer-voice-tts-model-eagle = { module = "com.huawei.hms:ml-computer-voice-tts-model-eagle", version.ref = "mlComputerVoiceTtsModelBee" }
 play-services-mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "playServicesMlkitTextRecognition" }
@@ -66,3 +73,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 hilt-android    = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp             = { id = "com.google.devtools.ksp", version.ref = "kspVers" }
+agcpv = {id = "com.huawei.agconnect.agcp", version.ref = "agcp"}
