@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context="com.hoshiengineering.readerassistant.ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/text_home"
@@ -19,4 +19,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/main_edittxt"
+        android:layout_width="match_parent"
+        android:autofillHints="Type here"
+        android:hint="@string/type_here"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_home"
+        android:layout_height="wrap_content">
+
+    </EditText>
 </androidx.constraintlayout.widget.ConstraintLayout>

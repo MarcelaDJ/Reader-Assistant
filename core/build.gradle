@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.agcpv)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 apply plugin: 'com.huawei.agconnect'
@@ -44,6 +46,7 @@ dependencies {
 
     // Hilt (inyección de dependencias)
     implementation libs.hilt.android
+    ksp libs.hilt.compiler
 
     // Room
     implementation libs.room.runtime

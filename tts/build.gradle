@@ -46,7 +46,7 @@ dependencies {
     implementation libs.hilt.android
     ksp libs.hilt.compiler
 
-    ksp(libs.javapoet)
+   // ksp(libs.javapoet)
     //ksp libs.room.compiler
    // implementation libs.ml.computer.voice.tts.model
     implementation libs.ml.computer.voice.tts.model.bee

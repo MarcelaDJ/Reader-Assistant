@@ -10,7 +10,7 @@ class GoogleTextToSpeechImpl(context: Context) : AppTextToSpeech {
     init {
         tts = TextToSpeech(context) { status ->
             if (status == TextToSpeech.SUCCESS) {
-                tts?.language = Locale.US
+                tts?.language = Locale.getDefault()
             }
         }
     }

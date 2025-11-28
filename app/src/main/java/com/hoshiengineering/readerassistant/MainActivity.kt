@@ -1,23 +1,22 @@
 package com.hoshiengineering.readerassistant
 
-import android.content.Context
 import android.media.AudioManager
 import android.os.Bundle
 import android.view.Menu
+
 import androidx.activity.viewModels
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.hoshiengineering.readerassistant.databinding.ActivityMainBinding
 import com.hoshiengineering.tts.TtsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -25,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val viewModel: TtsViewModel by viewModels()
+   // private val homeviewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .setAnchorView(R.id.fab).show()
-        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -51,10 +47,25 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        val audioManager = this.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0)
-
-        viewModel.speak("Hola desde Hilt con HMS o GMS automático 🚀")
+        val audioManager = this.getSystemService(AUDIO_SERVICE) as AudioManager
+        audioManager.setStreamVolume(
+            AudioManager.STREAM_MUSIC,
+            audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
+            0
+        )
+        viewModel.speak("")
+        binding.appBarMain.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .setAnchorView(R.id.fab).show()
+           val editTextValue ="" //homeviewModel.editTextContent.value
+            //viewModel.speak("Hola desde Hilt con HMS o GMS automático 🚀")
+            if (editTextValue != null) {
+                viewModel.speak(editTextValue)
+            } else {
+                viewModel.speak("Hola desde Hilt con HMS o GMS automático 🚀")
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

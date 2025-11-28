@@ -4,12 +4,10 @@ import android.app.Application
 import android.text.TextUtils
 import android.util.Log
 import com.hoshiengineering.core.utils.ServiceAvailabilityProvider
-import com.huawei.agconnect.AGConnectInstance
 import com.huawei.agconnect.AGConnectOptionsBuilder
 import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
 import com.huawei.hms.mlsdk.common.MLApplication
-import com.huawei.hms.mlsdk.common.MLApplicationSetting
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
