@@ -1,4 +1,4 @@
-package com.hoshiengineering.readerAssistant
+package com.hoshiengineering.readerassistant
 
 import org.junit.Test
 

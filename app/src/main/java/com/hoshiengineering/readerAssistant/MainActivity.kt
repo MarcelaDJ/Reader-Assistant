@@ -1,4 +1,4 @@
-package com.hoshiengineering.readerAssistant
+package com.hoshiengineering.readerassistant
 
 import android.content.Context
 import android.media.AudioManager
@@ -14,7 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.hoshiengineering.readerAssistant.databinding.ActivityMainBinding
+import com.hoshiengineering.readerassistant.databinding.ActivityMainBinding
 import com.hoshiengineering.tts.TtsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp

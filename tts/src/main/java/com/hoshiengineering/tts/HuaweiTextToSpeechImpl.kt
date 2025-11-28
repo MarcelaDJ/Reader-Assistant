@@ -4,14 +4,12 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.util.Pair
-import com.huawei.hms.mlsdk.model.download.MLLocalModelManager
 import com.huawei.hms.mlsdk.tts.MLTtsAudioFragment
 import com.huawei.hms.mlsdk.tts.MLTtsCallback
 import com.huawei.hms.mlsdk.tts.MLTtsConfig
 import com.huawei.hms.mlsdk.tts.MLTtsConstants
 import com.huawei.hms.mlsdk.tts.MLTtsEngine
 import com.huawei.hms.mlsdk.tts.MLTtsError
-import com.huawei.hms.mlsdk.tts.MLTtsLocalModel
 import com.huawei.hms.mlsdk.tts.MLTtsWarn
 
 
@@ -26,7 +24,6 @@ class HuaweiTextToSpeechImpl(context: Context) : AppTextToSpeech {
             .setVolume(10.0f)
         engine = MLTtsEngine(config)
         engine.updateConfig(config)
-
         engine.setTtsCallback(object : MLTtsCallback {
 
             override fun onError(p0: String?, p1: MLTtsError?) {

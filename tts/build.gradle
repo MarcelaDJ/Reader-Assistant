@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
+apply plugin: 'com.huawei.agconnect'
+
 android {
     namespace 'com.hoshiengineering.tts'
     compileSdk 36
@@ -46,7 +48,7 @@ dependencies {
 
     ksp(libs.javapoet)
     //ksp libs.room.compiler
-
+   // implementation libs.ml.computer.voice.tts.model
     implementation libs.ml.computer.voice.tts.model.bee
     implementation libs.ml.computer.voice.tts.model.eagle
     implementation libs.ml.computer.vision.ocr

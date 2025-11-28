@@ -14,6 +14,7 @@ lifecycleLivedataKtx = "2.9.3"
 lifecycleViewmodelKtx = "2.9.3"
 mlComputerVisionCloud = "2.0.5.304"
 mlComputerVisionOcr = "2.0.5.301"
+mlComputerVoiceTtsModel = "3.7.0.302"
 mlComputerVoiceTtsModelBee = "3.6.0.300"
 navigationFragmentKtx = "2.9.3"
 navigationUiKtx = "2.9.3"
@@ -51,6 +52,8 @@ ml-computer-vision-ocr = { module = "com.huawei.hms:ml-computer-vision-ocr", ver
 ml-computer-vision-ocr-cn-model = { module = "com.huawei.hms:ml-computer-vision-ocr-cn-model", version.ref = "mlComputerVisionOcr" }
 ml-computer-vision-ocr-jk-model = { module = "com.huawei.hms:ml-computer-vision-ocr-jk-model", version.ref = "mlComputerVisionOcr" }
 ml-computer-vision-ocr-latin-model = { module = "com.huawei.hms:ml-computer-vision-ocr-latin-model", version.ref = "mlComputerVisionOcr" }
+ml-computer-vision-segmentation = { module = "com.huawei.hms:ml-computer-vision-segmentation", version.ref = "mlComputerVoiceTtsModel" }
+ml-computer-voice-tts-model = { module = "com.huawei.hms:ml-computer-voice-tts-model", version.ref = "mlComputerVoiceTtsModel" }
 ml-computer-voice-tts-model-bee = { module = "com.huawei.hms:ml-computer-voice-tts-model-bee", version.ref = "mlComputerVoiceTtsModelBee" }
 ml-computer-voice-tts-model-eagle = { module = "com.huawei.hms:ml-computer-voice-tts-model-eagle", version.ref = "mlComputerVoiceTtsModelBee" }
 play-services-mlkit-text-recognition = { module = "com.google.android.gms:play-services-mlkit-text-recognition", version.ref = "playServicesMlkitTextRecognition" }

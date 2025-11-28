@@ -1,4 +1,4 @@
-package com.hoshiengineering.readerAssistant.ui.slideshow
+package com.hoshiengineering.readerassistant.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

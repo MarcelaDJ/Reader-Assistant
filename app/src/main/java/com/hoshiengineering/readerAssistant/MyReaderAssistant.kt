@@ -1,4 +1,4 @@
-package com.hoshiengineering.readerAssistant
+package com.hoshiengineering.readerassistant
 
 import android.app.Application
 import android.text.TextUtils
@@ -9,26 +9,27 @@ import com.huawei.agconnect.AGConnectOptionsBuilder
 import com.huawei.hms.aaid.HmsInstanceId
 import com.huawei.hms.common.ApiException
 import com.huawei.hms.mlsdk.common.MLApplication
+import com.huawei.hms.mlsdk.common.MLApplicationSetting
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class MyReaderAssistant: Application() {
+class MyReaderAssistant : Application() {
     override fun onCreate() {
         super.onCreate()
 
         val isHmsAvailable = ServiceAvailabilityProvider.isHmsAvailable(this)
 
-         if (isHmsAvailable) {
-             MLApplication.initialize(applicationContext)
-             val ttsInit = MLApplication.getInstance().setApiKey("DgEDALcjrS3ZR+VjwPA4Ut4BuP/npSkcw4fJsF/rLvgW6s0bAFQ/L2xjn+yYSOIh2MMoW38FOOD1oLNBV45in7lPXvz05FY0bFmYnQ==")
-             Log.d("HuaweiTTS", "HMS TTS inicializado con appId: $ttsInit")
-
-           //  token
+        if (isHmsAvailable) {
+            MLApplication.initialize(applicationContext)
+            val ttsInit = MLApplication.getInstance()
+                .setApiKey("DgEDAMtrN9E3+LJdxEABVC9Y5FiYMHnxldAwlfn1h25cPWE9ccU3vxwG+0F/8toxqItHYPPdjBYyHIBDrwesnF8ZbO17ZIhL1NGRsA==")
+            Log.d("HuaweiTTS", "HMS TTS inicializado con appId: $ttsInit")
+            //  token
         } else {
-             /* FirebaseMessaging.getInstance().token.addOnSuccessListener { result ->
-               LogTaxisLibres.i(TAG, "FCM token: $result")
-               tokenFcm = result
-           }*/
+            /* FirebaseMessaging.getInstance().token.addOnSuccessListener { result ->
+              LogTaxisLibres.i(TAG, "FCM token: $result")
+              tokenFcm = result
+          }*/
         }
     }
 
@@ -43,9 +44,10 @@ class MyReaderAssistant: Application() {
                             .getString("client/app_id")
                         val token =
                             HmsInstanceId.getInstance(applicationContext).getToken(appId, "HCM")
+
                         if (!TextUtils.isEmpty(token)) {
                             Log.i("TAG", "HMS token: $token")
-                          //  tokenHcm = token
+                            //  tokenHcm = token
                         }
                     } catch (e: ApiException) {
                         Log.e("TAG", "get token failed, $e")

@@ -1,4 +1,4 @@
-package com.hoshiengineering.readerAssistant.ui.gallery
+package com.hoshiengineering.readerassistant.ui.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.agcpv)
 }
 
-
+apply plugin: 'com.huawei.agconnect'
 
 android {
     namespace 'com.hoshiengineering.core'
@@ -56,4 +56,5 @@ dependencies {
     api libs.hms.push
     api libs.hms.ml.computer.voice.tts
     api libs.play.services.mlkit.text.recognition
+    api libs.ml.computer.vision.segmentation
 }
