@@ -1,8 +1,10 @@
 package com.hoshiengineering.readerassistant
 
+import android.content.Context
 import android.media.AudioManager
 import android.os.Bundle
 import android.view.Menu
+import android.view.inputmethod.InputMethodManager
 
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.hoshiengineering.readerassistant.databinding.ActivityMainBinding
+import com.hoshiengineering.readerassistant.ui.home.HomeViewModel
 import com.hoshiengineering.tts.TtsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private val viewModel: TtsViewModel by viewModels()
-   // private val homeviewModel: HomeViewModel by viewModels()
+    private val homeviewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,17 +56,22 @@ class MainActivity : AppCompatActivity() {
             audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
             0
         )
-        viewModel.speak("")
+       viewModel.speak("hi")
         binding.appBarMain.fab.setOnClickListener { view ->
+
+            val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+
+            view.clearFocus()
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
-           val editTextValue ="" //homeviewModel.editTextContent.value
-            //viewModel.speak("Hola desde Hilt con HMS o GMS automático 🚀")
-            if (editTextValue != null) {
+
+            val editTextValue = homeviewModel.editTextContent.value
+            if (!editTextValue.isNullOrEmpty()) {
                 viewModel.speak(editTextValue)
             } else {
-                viewModel.speak("Hola desde Hilt con HMS o GMS automático 🚀")
+                viewModel.speak("Hola desde Hilt con HMS o GMS automático")
             }
         }
     }

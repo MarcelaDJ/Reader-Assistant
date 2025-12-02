@@ -12,6 +12,8 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class MyReaderAssistant : Application() {
+
+    private val API_KEY : String ="DgEDAMtrN9E3+LJdxEABVC9Y5FiYMHnxldAwlfn1h25cPWE9ccU3vxwG+0F/8toxqItHYPPdjBYyHIBDrwesnF8ZbO17ZIhL1NGRsA=="
     override fun onCreate() {
         super.onCreate()
 
@@ -19,9 +21,8 @@ class MyReaderAssistant : Application() {
 
         if (isHmsAvailable) {
             MLApplication.initialize(applicationContext)
-            val ttsInit = MLApplication.getInstance()
-                .setApiKey("DgEDAMtrN9E3+LJdxEABVC9Y5FiYMHnxldAwlfn1h25cPWE9ccU3vxwG+0F/8toxqItHYPPdjBYyHIBDrwesnF8ZbO17ZIhL1NGRsA==")
-            Log.d("HuaweiTTS", "HMS TTS inicializado con appId: $ttsInit")
+            MLApplication.getInstance().apiKey = API_KEY
+            Log.d("HuaweiTTS", "HMS TTS inicializado con appId: ")
             //  token
         } else {
             /* FirebaseMessaging.getInstance().token.addOnSuccessListener { result ->
