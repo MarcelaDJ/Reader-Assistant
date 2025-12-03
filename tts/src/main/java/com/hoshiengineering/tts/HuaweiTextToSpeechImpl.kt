@@ -12,18 +12,21 @@ import com.huawei.hms.mlsdk.tts.MLTtsConstants
 import com.huawei.hms.mlsdk.tts.MLTtsEngine
 import com.huawei.hms.mlsdk.tts.MLTtsError
 import com.huawei.hms.mlsdk.tts.MLTtsWarn
+import java.util.Locale
 
 
 class HuaweiTextToSpeechImpl(context: Context) : AppTextToSpeech {
     private var engine: MLTtsEngine?= null
+    val cont :Context= context
 
     init {
         initializeEngine()
     }
     private fun initializeEngine() {
+        val ttsConf= getHmsTtsLanguage(cont)
         val config = MLTtsConfig()
-            .setLanguage(MLTtsConstants.TTS_EN_US)
-            .setPerson(MLTtsConstants.TTS_SPEAKER_FEMALE_EN)
+            .setLanguage(ttsConf.language)
+            .setPerson(ttsConf.person)
             .setSpeed(1.0f)
             .setVolume(10.0f)
 
@@ -82,4 +85,38 @@ class HuaweiTextToSpeechImpl(context: Context) : AppTextToSpeech {
         engine?.shutdown()
         engine = null
     }
+
+    private fun getHmsTtsLanguage(context: Context): HmsTtsConfig {
+
+        val locale = Locale.getDefault()
+        val languageCode = locale.language.lowercase(Locale.ROOT) // Ej: "es", "en"
+
+        return when (languageCode) {
+            "es" -> {
+                HmsTtsConfig(
+                    language =MLTtsConstants.TTS_LAN_ES_ES,
+                    person = MLTtsConstants.TTS_SPEAKER_FEMALE_ES
+                )
+            }
+
+            "en" -> {
+                HmsTtsConfig(
+                MLTtsConstants.TTS_EN_US,
+                    MLTtsConstants.TTS_SPEAKER_FEMALE_EN_1
+                )
+            }
+
+            else -> {
+                HmsTtsConfig(
+                    MLTtsConstants.TTS_EN_US,
+                    MLTtsConstants.TTS_SPEAKER_FEMALE_EN_1
+                )
+            }
+        }
+    }
+
+    data class HmsTtsConfig(
+        val language: String,
+        val person: String
+    )
 }

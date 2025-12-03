@@ -76,5 +76,4 @@ dependencies {
     // Hilt (inyección de dependencias)
     implementation libs.hilt.android
     ksp libs.hilt.compiler
-   // ksp("com.squareup:javapoet:1.13.0")
 }

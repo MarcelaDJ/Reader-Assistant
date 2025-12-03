@@ -56,9 +56,9 @@ class MainActivity : AppCompatActivity() {
             audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC),
             0
         )
-       viewModel.speak("hi")
+        viewModel.speak("Wellcome to Reader Assistant")
         binding.appBarMain.fab.setOnClickListener { view ->
-
+            var editTextValue = homeviewModel.editTextContent.value
             val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
 
@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
 
-            val editTextValue = homeviewModel.editTextContent.value
             if (!editTextValue.isNullOrEmpty()) {
                 viewModel.speak(editTextValue)
             } else {
